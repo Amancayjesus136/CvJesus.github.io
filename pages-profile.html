@@ -1,0 +1,1791 @@
+<!doctype html>
+<html lang="en" data-layout="horizontal" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Profile | Velzon - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css">
+
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+    <div class="layout-width">
+        <div class="navbar-header">
+            <div class="d-flex">
+                <!-- LOGO -->
+                <div class="navbar-brand-box horizontal-logo">
+                    <a href="index.html" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <!-- <img src="assets/images/logo-sm.png" alt="" height="22"> -->
+                        </span>
+                        <span class="logo-lg">
+                            <!-- <img src="assets/images/logo-dark.png" alt="" height="17"> -->
+                        </span>
+                    </a>
+
+                    <a href="index.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <!-- <img src="assets/images/logo-sm.png" alt="" height="22"> -->
+                        </span>
+                        <span class="logo-lg">
+                            <!-- <img src="assets/images/logo-light.png" alt="" height="17"> -->
+                        </span>
+                    </a>
+                </div>
+
+                <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+                    <span class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+
+            <div class="d-flex align-items-center">
+
+                <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                    <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bx bx-search fs-22"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                        <form class="p-3">
+                            <div class="form-group m-0">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="ms-1 header-item d-none d-sm-flex">
+                    <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-toggle="fullscreen">
+                        <i class='bx bx-fullscreen fs-22'></i>
+                    </button>
+                </div>
+
+                <div class="ms-1 header-item d-none d-sm-flex">
+                    <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                        <i class='bx bx-moon fs-22'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- removeNotificationModal -->
+<div id="removeNotificationModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="NotificationModalbtn-close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mt-2 text-center">
+                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
+                    <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                        <h4>Are you sure ?</h4>
+                        <p class="text-muted mx-4 mb-0">Are you sure you want to remove this Notification ?</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                    <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn w-sm btn-danger" id="delete-notification">Yes, Delete It!</button>
+                </div>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="profile-foreground position-relative mx-n4 mt-n4">
+                        <div class="profile-wid-bg">
+                            <img src="assets/images/nft/bg-home.jpg" alt="" class="profile-wid-img" />
+                        </div>
+                    </div>
+                    <div class="pt-4 mb-4 mb-lg-3 pb-lg-4 profile-wrapper">
+                        <div class="row g-4">
+                            <div class="col-auto">
+                                <div class="avatar-lg">
+                                    <img src="assets/images/nft/adrian.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col">
+                                <div class="p-2">
+                                    <h3 class="text-white mb-1">Jesús Adrián</h3>
+                                    <p class="text-white-75">Amancay Acuña</p>
+                                    <div class="hstack text-white-50 gap-1">
+                                        <div class="me-2"><i class="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"></i>Lima, Villa El Salvador</div>
+                                        <div>
+                                            <i class="ri-building-line me-1 text-white-75 fs-16 align-middle"></i>ISMEM
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <!-- <div class="col-12 col-lg-auto order-last order-lg-0">
+                                <div class="row text text-white-50 text-center">
+                                    <div class="col-lg-6 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-white mb-1">24.3K</h4>
+                                            <p class="fs-14 mb-0">Followers</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-white mb-1">1.3K</h4>
+                                            <p class="fs-14 mb-0">Following</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!--end col-->
+
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div>
+                                <div class="d-flex profile-wrapper">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-pills animation-nav profile-nav gap-2 gap-lg-3 flex-grow-1" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link fs-14 active" data-bs-toggle="tab" href="#overview-tab" role="tab">
+                                                <i class="ri-airplay-fill d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Perfil</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- <div class="flex-shrink-0">
+                                        <a href="pages-profile-settings.html" class="btn btn-success"><i class="ri-upload-2-fill me-1 align-bottom"></i> Descargar CV</a>
+                                    </div> -->
+                                </div>
+                                <!-- Tab panes -->
+                                <div class="tab-content pt-4 text-muted">
+                                    <div class="tab-pane active" id="overview-tab" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-xxl-3">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-5">Perfil Completado</h5>
+                                                        <div class="progress animated-progress custom-progress progress-label">
+                                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="label">40%</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-3">Información</h5>
+                                                        <div class="table-responsive">
+                                                            <table class="table table-borderless mb-0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Nombres :</th>
+                                                                        <td class="text-muted">Jesús Adrián Amancay Acuña</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Celular :</th>
+                                                                        <td class="text-muted">+51 933924456</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Correo :</th>
+                                                                        <td class="text-muted">amancayjesus136@gmail.com</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Dirección :</th>
+                                                                        <td class="text-muted">Mz C Lote 19 Grupo 1
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Cumpleaños</th>
+                                                                        <td class="text-muted">27 Nov 2002</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Nacionalidad</th>
+                                                                        <td class="text-muted">PERUANO</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div><!-- end card body -->
+                                                </div><!-- end card -->
+
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-4">Portafolio</h5>
+                                                        <div class="d-flex flex-wrap gap-2">
+                                                            <div>
+                                                                <a href="https://github.com/Amancayjesus136" class="avatar-xs d-block">
+                                                                    <span class="avatar-title rounded-circle fs-16 bg-dark text-light">
+                                                                        <i class="ri-github-fill"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div>
+                                                                <a href="https://amancayjesus136.github.io/WebSysForges" class="avatar-xs d-block">
+                                                                    <span class="avatar-title rounded-circle fs-16 bg-info">
+                                                                        <i class="ri-global-fill"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div>
+                                                                <a href="https://www.facebook.com/amancayjesus" class="avatar-xs d-block">
+                                                                    <span class="avatar-title rounded-circle fs-16 bg-primary">
+                                                                        <i class="ri-facebook-fill"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div>
+                                                                <a href="https://www.instagram.com/pepe_el_poll00/" class="avatar-xs d-block">
+                                                                    <span class="avatar-title rounded-circle fs-16 bg-danger">
+                                                                        <i class="ri-instagram-fill"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div>
+                                                                <a href="https://wa.me/+51933924456" class="avatar-xs d-block">
+                                                                    <span class="avatar-title rounded-circle fs-16 bg-success">
+                                                                        <i class="ri-whatsapp-fill"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- end card body -->
+                                                </div><!-- end card -->
+
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-4">Habilidades</h5>
+                                                        <div class="d-flex flex-wrap gap-2 fs-15">
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">Microsoft Word</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">Microsoft PowerPoint</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">Microsoft Excel</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">HTML</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">CSS</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">PHP</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">Laravel</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">Angular</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">MySQL</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">SQL SERVER</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">Cobol</a>
+                                                            <a href="javascript:void(0);" class="badge badge-soft-primary">JCL</a>
+                                                        </div>
+                                                    </div><!-- end card body -->
+                                                </div><!-- end card -->
+
+                                                <!-- <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-4">
+                                                            <div class="flex-grow-1">
+                                                                <h5 class="card-title mb-0">Suggestions</h5>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <div class="dropdown">
+                                                                    <a href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <i class="ri-more-2-fill fs-14"></i>
+                                                                    </a>
+
+                                                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink2">
+                                                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex align-items-center py-3">
+                                                                <div class="avatar-xs flex-shrink-0 me-3">
+                                                                    <img src="assets/images/users/avatar-3.jpg" alt="" class="img-fluid rounded-circle" />
+                                                                </div>
+                                                                <div class="flex-grow-1">
+                                                                    <div>
+                                                                        <h5 class="fs-14 mb-1">Esther James</h5>
+                                                                        <p class="fs-13 text-muted mb-0">Frontend Developer</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <button type="button" class="btn btn-sm btn-outline-success"><i class="ri-user-add-line align-middle"></i></button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center py-3">
+                                                                <div class="avatar-xs flex-shrink-0 me-3">
+                                                                    <img src="assets/images/users/avatar-4.jpg" alt="" class="img-fluid rounded-circle" />
+                                                                </div>
+                                                                <div class="flex-grow-1">
+                                                                    <div>
+                                                                        <h5 class="fs-14 mb-1">Jacqueline Steve</h5>
+                                                                        <p class="fs-13 text-muted mb-0">UI/UX Designer</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <button type="button" class="btn btn-sm btn-outline-success"><i class="ri-user-add-line align-middle"></i></button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center py-3">
+                                                                <div class="avatar-xs flex-shrink-0 me-3">
+                                                                    <img src="assets/images/users/avatar-5.jpg" alt="" class="img-fluid rounded-circle" />
+                                                                </div>
+                                                                <div class="flex-grow-1">
+                                                                    <div>
+                                                                        <h5 class="fs-14 mb-1">George Whalen</h5>
+                                                                        <p class="fs-13 text-muted mb-0">Backend Developer</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <button type="button" class="btn btn-sm btn-outline-success"><i class="ri-user-add-line align-middle"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>end card body -->
+                                                <!-- </div> --> 
+                                                <!--end card-->
+
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-4">
+                                                            <div class="flex-grow-1">
+                                                                <h5 class="card-title mb-0">Formación Académica</h5>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <!-- <div class="dropdown">
+                                                                    <a href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <i class="ri-more-2-fill fs-14"></i>
+                                                                    </a>
+
+                                                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink1">
+                                                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                                    </ul>
+                                                                </div> -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex mb-4">
+                                                            <!-- <div class="flex-shrink-0">
+                                                                <img src="assets/images/small/img-4.jpg" alt="" height="50" class="rounded" />
+                                                            </div> -->
+                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
+                                                                <a href="javascript:void(0);">
+                                                                    <h6 class="text-truncate fs-12">Desarrollo de sistemas de información</h6>
+                                                                    <h6 class="text-truncate fs-10">Instituto Superior María Elena Moyano</h6>
+                                                                    <h6 class="text-truncate fs-8">6TO CICLO</h6>
+                                                                </a>
+                                                                <p class="text-muted mb-0">PRESENTE</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex mb-4">
+                                                            <!-- <div class="flex-shrink-0">
+                                                                <img src="assets/images/small/img-5.jpg" alt="" height="50" class="rounded" />
+                                                            </div> -->
+                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
+                                                                <a href="javascript:void(0);">
+                                                                    <h6 class="text-truncate fs-12">Secundaria</h6>
+                                                                    <h6 class="text-truncate fs-10">Fe y Alegría N°17</h6>
+                                                                    <h6 class="text-truncate fs-8">CULMINADO</h6>
+                                                                </a>
+                                                                <p class="text-muted mb-0">Marzo 2015 - Diciembre 2019</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <!-- <div class="flex-shrink-0">
+                                                                <img src="assets/images/small/img-6.jpg" alt="" height="50" class="rounded" />
+                                                            </div> -->
+                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
+                                                                <a href="javascript:void(0);">
+                                                                    <h6 class="text-truncate fs-12">Primaria</h6>
+                                                                    <h6 class="text-truncate fs-10">Fe y Alegría N°17</h6>
+                                                                    <h6 class="text-truncate fs-8">CULMINADO</h6>
+                                                                </a>
+                                                                <p class="text-muted mb-0">Marzo 2009 - Diciembre 2014</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end card-body-->
+                                                </div>
+                                                <!--end card-->
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-xxl-9">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-3">Perfil</h5>
+                                                        <p>No busco una empresa que me asegure un salario el resto de mi vida, sino la oportunidad de demostrar al mundo que los jóvenes también tenemos posibilidades de crecer profesionalmente y dar lo mejor de nosotros mismos a las empresas que confiaron en nuestra capacidad.
+                                                        Estudiante, con conocimiento en desarrollo de software, base de datos y lenguajes de programación. Mi objetivo principal es crecer profesionalmente, por ende, busco oportunidades que me permitan aprendizaje. Caracterizado por la orientación al logro, capacidad de análisis, dinamismo, compromiso y proactividad.
+                                                        </p>
+                                                        <div class="row">
+                                                            <div class="col-6 col-md-4">
+                                                                <div class="d-flex mt-4">
+                                                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
+                                                                        <div class="avatar-title bg-light rounded-circle fs-16 text-primary">
+                                                                            <i class="ri-user-2-fill"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex-grow-1 overflow-hidden">
+                                                                        <p class="mb-1">Professión :</p>
+                                                                        <h6 class="text-truncate mb-0">Junior / Practicante</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-6 col-md-4">
+                                                                <div class="d-flex mt-4">
+                                                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
+                                                                        <div class="avatar-title bg-light rounded-circle fs-16 text-primary">
+                                                                            <i class="ri-global-line"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex-grow-1 overflow-hidden">
+                                                                        <p class="mb-1">WebSysForge</p>
+                                                                        <a href="https://amancayjesus136.github.io/WebSysForges" class="fw-semibold">https://amancayjesus136.github.io</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                        </div>
+                                                        <!--end row-->
+                                                    </div>
+                                                    <!--end card-body-->
+                                                </div><!-- end card -->
+
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="card">
+                                                            <div class="card-header align-items-center d-flex">
+                                                                <h4 class="card-title mb-0  me-2">Experiencia Laboral</h4>
+                                                                <div class="flex-shrink-0 ms-auto">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <div class="tab-content text-muted">
+                                                                    <div class="tab-pane active" id="today" role="tabpanel">
+                                                                        <div class="profile-timeline">
+                                                                            <div class="accordion accordion-flush" id="todayExample">
+                                                                                <!-- Acordeón 1 -->
+                                                                                <div class="accordion-item border-0">
+                                                                                    <div class="accordion-header" id="headingOne">
+                                                                                        <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true">
+                                                                                            <div class="d-flex">
+                                                                                                <div class="flex-grow-1 ms-3">
+                                                                                                    <h6 class="fs-14 mb-1">PhenomenalB2B</h6>
+                                                                                                    <small class="text-muted">Julio 2023 - Actual </small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#todayExample">
+                                                                                        <div class="accordion-body ms-2 ps-5">
+                                                                                            Desarrollador Web
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                
+                                                                                <!-- Acordeón 2 -->
+                                                                                <div class="accordion-item border-0">
+                                                                                    <div class="accordion-header" id="headingTwo">
+                                                                                        <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="true">
+                                                                                            <div class="d-flex">
+                                                                                                <div class="flex-grow-1 ms-3">
+                                                                                                    <h6 class="fs-14 mb-1">BBVA</h6>
+                                                                                                    <small class="text-muted">Septiembre 2022 - Junio 2023</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#todayExample">
+                                                                                        <div class="accordion-body ms-2 ps-5">
+                                                                                            Documentación de pruebas / DESARROLLO & PRODUCCIÓN
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <!-- Acordeón 6 -->
+                                                                                <div class="accordion-item border-0">
+                                                                                    <div class="accordion-header" id="headingSix">
+                                                                                        <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseSix" aria-expanded="true">
+                                                                                            <div class="d-flex">
+                                                                                                <div class="flex-grow-1 ms-3">
+                                                                                                    <h6 class="fs-14 mb-1">Tottus Angamos</h6>
+                                                                                                    <small class="text-muted">Marzo 2022- Julio 2022</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#todayExample">
+                                                                                        <div class="accordion-body ms-2 ps-5">
+                                                                                            Cajero
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                
+                                                                                <!-- Acordeón 3 -->
+                                                                                <div class="accordion-item border-0">
+                                                                                    <div class="accordion-header" id="headingThree">
+                                                                                        <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="true">
+                                                                                            <div class="d-flex">
+                                                                                                <div class="flex-grow-1 ms-3">
+                                                                                                    <h6 class="fs-14 mb-1">Tottus Lurín</h6>
+                                                                                                    <small class="text-muted">Diciembre 2021 - Febrero 2022 </small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#todayExample">
+                                                                                        <div class="accordion-body ms-2 ps-5">
+                                                                                            Reponedor de área de alimentos
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                
+                                                                                <!-- Acordeón 4 -->
+                                                                                <div class="accordion-item border-0">
+                                                                                    <div class="accordion-header" id="headingFour">
+                                                                                        <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="true">
+                                                                                            <div class="d-flex">
+                                                                                                <div class="flex-grow-1 ms-3">
+                                                                                                    <h6 class="fs-14 mb-1">Ripley</h6>
+                                                                                                    <small class="text-muted">Septiembre 2021 - Noviembre 2021</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#todayExample">
+                                                                                        <div class="accordion-body ms-2 ps-5">
+                                                                                            Control de inventario de textileria / Almacén
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                
+                                                                                <!-- Acordeón 5 -->
+                                                                                <div class="accordion-item border-0">
+                                                                                    <div class="accordion-header" id="headingFive">
+                                                                                        <a class="accordion-button p-2 shadow-none" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="true">
+                                                                                            <div class="d-flex">
+                                                                                                <div class="flex-grow-1 ms-3">
+                                                                                                    <h6 class="fs-14 mb-1">EURO DIGITAL CLEAN S.A.C</h6>
+                                                                                                    <small class="text-muted">Mayo 2021 - Agosto 2021</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#todayExample">
+                                                                                        <div class="accordion-body ms-2 ps-5">
+                                                                                            Operario de limpieza
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                
+
+                                                <!-- start plan -->
+                                                <section class="section bg-light" id="categories">
+                                                    <div class="container-fluid">
+                                                        <!-- <div class="text-center mb-5">
+                                                            <h2 class="mb-3 fw-semibold lh-base">Proyectos</h2>
+                                                        </div> -->
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <!-- Swiper -->
+                                                                <div class="swiper mySwiper pb-4">
+                                                                    <div class="swiper-wrapper">
+                                                                        <div class="swiper-slide">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <div class="row g-1 mb-3">
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/economuebles1.jpg" alt="" class="img-fluid rounded">
+                                                                                            <img src="assets/images/nft/economuebles2.jpg" alt="" class="img-fluid rounded mt-1">
+                                                                                        </div><!--end col-->
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/economuebles3.jpg" alt="" class="img-fluid rounded mb-1">
+                                                                                            <img src="assets/images/nft/economuebles4.jpg" alt="" class="img-fluid rounded">
+                                                                                        </div><!--end col-->
+                                                                                    </div><!--end row-->
+                                                                                    <a href="https://www.figma.com/file/lMgIzh2brGnhxlUT4tcSRL/Economuebles?type=design&node-id=0-1&mode=design&t=NnOvPDvpaeRRKxDZ-0" class="float-end"> Ver detalles <i class="ri-arrow-right-line align-bottom"></i></a>
+                                                                                    <h5 class="mb-0 fs-16"><a href="#!">Economuebles <span class="badge badge-soft-success">2022</span></a></h5>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="swiper-slide">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <div class="row g-1 mb-3">
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/ceri1.jpg" alt="" class="img-fluid rounded">
+                                                                                            <img src="assets/images/nft/ceri2.jpg" alt="" class="img-fluid rounded mt-1">
+                                                                                        </div><!--end col-->
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/ceri3.jpg" alt="" class="img-fluid rounded mb-1">
+                                                                                            <img src="assets/images/nft/ceri4.jpg" alt="" class="img-fluid rounded">
+                                                                                        </div><!--end col-->
+                                                                                    </div><!--end row-->
+                                                                                    <a href="https://www.figma.com/file/YS9JTNHmzYbmMhGxxAouks/CEERI?type=design&node-id=0-1&mode=design&t=NnOvPDvpaeRRKxDZ-0" class="float-end"> Ver detalles <i class="ri-arrow-right-line align-bottom"></i></a>
+                                                                                    <h5 class="mb-0 fs-16"><a href="#!">Ceeri <span class="badge badge-soft-success">2022</span></a></h5>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="swiper-slide">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <div class="row g-1 mb-3">
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/web1.jpg" alt="" class="img-fluid rounded">
+                                                                                            <img src="assets/images/nft/web2.jpg" alt="" class="img-fluid rounded mt-1">
+                                                                                        </div><!--end col-->
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/web3.jpg" alt="" class="img-fluid rounded mb-1">
+                                                                                            <img src="assets/images/nft/web4.jpg" alt="" class="img-fluid rounded">
+                                                                                        </div><!--end col-->
+                                                                                    </div><!--end row-->
+                                                                                    <a href="https://www.figma.com/file/zPPfwoGm9KT1P81uu24hTC/Web-Sostenibilidad?type=design&mode=design&t=NnOvPDvpaeRRKxDZ-1" class="float-end"> Ver detalles <i class="ri-arrow-right-line align-bottom"></i></a>
+                                                                                    <h5 class="mb-0 fs-16"><a href="#!">Web Sostenibilidad <span class="badge badge-soft-success">2023</span></a></h5>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="swiper-slide">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <div class="row g-1 mb-3">
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/phenomenal1.jpg" alt="" class="img-fluid rounded">
+                                                                                            <img src="assets/images/nft/phenomenal2.jpg" alt="" class="img-fluid rounded mt-1">
+                                                                                        </div><!--end col-->
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/phenomenal3.jpg" alt="" class="img-fluid rounded mb-1">
+                                                                                            <img src="assets/images/nft/phenomenal4.jpg" alt="" class="img-fluid rounded">
+                                                                                        </div><!--end col-->
+                                                                                    </div><!--end row-->
+                                                                                    <a href="#!" class="float-end"> Ver detalles <i class="ri-arrow-right-line align-bottom"></i></a>
+                                                                                    <h5 class="mb-0 fs-16"><a href="#!">Phenomenal <span class="badge badge-soft-success">2023</span></a></h5>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="swiper-slide">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <div class="row g-1 mb-3">
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/sunarp1.jpg" alt="" class="img-fluid rounded">
+                                                                                            <img src="assets/images/nft/sunarp2.jpg" alt="" class="img-fluid rounded mt-1">
+                                                                                        </div><!--end col-->
+                                                                                        <div class="col-6">
+                                                                                            <img src="assets/images/nft/sunarp3.jpg" alt="" class="img-fluid rounded mb-1">
+                                                                                            <img src="assets/images/nft/sunarp4.jpg" alt="" class="img-fluid rounded">
+                                                                                        </div><!--end col-->
+                                                                                    </div><!--end row-->
+                                                                                    <a href="https://docs.google.com/document/d/1DPlIai8T5BP6J3i51axAYzRSmNRlDh33aWooi2kyqxQ/edit?usp=sharing" class="float-end"> Ver detalles <i class="ri-arrow-right-line align-bottom"></i></a>
+                                                                                    <h5 class="mb-0 fs-16"><a href="#!">Sunarp <span class="badge badge-soft-success">2023</span></a></h5>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="swiper-pagination swiper-pagination-dark"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- end container -->
+                                                </section>
+
+                                                <section class="section bg-light" id="marketplace">
+                                                    <div class="container">
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-lg-8">
+                                                                <!-- <div class="text-center mb-5">
+                                                                    <h2 class="mb-3 fw-semibold lh-base">Cerificados</h2>
+                                                                </div> -->
+                                                            </div><!-- end col -->
+                                                        </div><!-- end row -->
+                                                        <div class="row">
+                                                            <div class="col-lg-4 product-item artwork ">
+                                                                <div class="card explore-box card-animate">
+                                                                    <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                                                        <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
+                                                                    </div>
+                                                                    <div class="explore-place-bid-img">
+                                                                        <img src="assets/images/nft/img-03.jpg" alt="" class="card-img-top explore-img" />
+                                                                        <div class="bg-overlay"></div>
+                                                                        <div class="place-bid-btn">
+                                                                            <a href="https://drive.google.com/file/d/1FrRZhYNl9SXUa6dm8tqvy3dHrpYcw6vL/view" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Ver</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> Año 2022 </p>
+                                                                        <h5 class="mb-1"><a href="apps-nft-item-details.html">Marca Personal</a></h5>
+                                                                        <p class="text-muted mb-0">Platzi</p>
+                                                                    </div>
+                                                                    <div class="card-footer border-top border-top-dashed">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="flex-grow-1 fs-14">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 product-item music ">
+                                                                <div class="card explore-box card-animate">
+                                                                    <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                                                        <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
+                                                                    </div>
+                                                                    <div class="explore-place-bid-img">
+                                                                        <img src="assets/images/nft/img-02.jpg" alt="" class="card-img-top explore-img" />
+                                                                        <div class="bg-overlay"></div>
+                                                                        <div class="place-bid-btn">
+                                                                            <a href="https://drive.google.com/file/d/1ryOfL2LwDUVzzYy5YFtrzjk8BUWhTbEa/view" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Ver</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> Año 2022 </p>
+                                                                        <h5 class="mb-1"><a href="apps-nft-item-details.html">Transformación Digital</a></h5>
+                                                                        <p class="text-muted mb-0">Instituto Europeo de Posgrado</p>
+                                                                    </div>
+                                                                    <div class="card-footer border-top border-top-dashed">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="flex-grow-1 fs-14">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 product-item games">
+                                                                <div class="card explore-box card-animate">
+                                                                    <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                                                        <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
+                                                                    </div>
+                                                                    <div class="explore-place-bid-img">
+                                                                        <img src="assets/images/nft/img-27.jpg" alt="" class="card-img-top explore-img" />
+                                                                        <div class="bg-overlay"></div>
+                                                                        <div class="place-bid-btn">
+                                                                            <a href="https://drive.google.com/file/d/1JcRyDUcgQYaCaz1FBLSYnoBgAwlUntPM/view" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Ver</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> Año 2022 </p>
+                                                                        <h5 class="mb-1"><a href="apps-nft-item-details.html">Contratación de Personal</a></h5>
+                                                                        <p class="text-muted mb-0">HP Foundation</p>
+                                                                    </div>
+                                                                    <div class="card-footer border-top border-top-dashed">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="flex-grow-1 fs-14">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 product-item music  ">
+                                                                <div class="card explore-box card-animate">
+                                                                    <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                                                        <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
+                                                                    </div>
+                                                                    <div class="explore-place-bid-img">
+                                                                        <img src="assets/images/nft/img-01.jpg" alt="" class="card-img-top explore-img" />
+                                                                        <div class="bg-overlay"></div>
+                                                                        <div class="place-bid-btn">
+                                                                            <a href="https://drive.google.com/file/d/1QDKAjgJXmXQRL5aCwbxk_LOcXSQMO7M0/view" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Ver</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> Año 2023 </p>
+                                                                        <h5 class="mb-1"><a href="apps-nft-item-details.html">Agile Management</a></h5>
+                                                                        <p class="text-muted mb-0">Instituto Europeo de Posgrado</p>
+                                                                    </div>
+                                                                    <div class="card-footer border-top border-top-dashed">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="flex-grow-1 fs-14">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 product-item crypto-card">
+                                                                <div class="card explore-box card-animate">
+                                                                    <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                                                        <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
+                                                                    </div>
+                                                                    <div class="explore-place-bid-img">
+                                                                        <img src="assets/images/nft/img-20.jpg" alt="" class="card-img-top explore-img" />
+                                                                        <div class="bg-overlay"></div>
+                                                                        <div class="place-bid-btn">
+                                                                            <a href="https://drive.google.com/file/d/1hRIIAokU6sDOmMMNfyXZrb2iuVFtTvx2/view" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Ver</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 2022 </p>
+                                                                        <h5 class="mb-1"><a href="apps-nft-item-details.html">Transformación Digital</a></h5>
+                                                                        <p class="text-muted mb-0">Fundiación universitaria del área andina</p>
+                                                                    </div>
+                                                                    <div class="card-footer border-top border-top-dashed">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="flex-grow-1 fs-14">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 product-item 3d-style">
+                                                                <div class="card explore-box card-animate">
+                                                                    <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                                                        <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
+                                                                    </div>
+                                                                    <div class="explore-place-bid-img">
+                                                                        <img src="assets/images/nft/img-21.jpg" alt="" class="card-img-top explore-img" />
+                                                                        <div class="bg-overlay"></div>
+                                                                        <div class="place-bid-btn">
+                                                                            <a href="https://drive.google.com/file/d/1kwCDW6upSzeylFbVH_I5qOo3hZyNI_fQ/view" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Ver</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 2022 </p>
+                                                                        <h5 class="mb-1"><a href="apps-nft-item-details.html">Scrum Foundation</a></h5>
+                                                                        <p class="text-muted mb-0">CertiProf</p>
+                                                                    </div>
+                                                                    <div class="card-footer border-top border-top-dashed">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="flex-grow-1 fs-14">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 product-item  ismem">
+                                                                <div class="card explore-box card-animate">
+                                                                    <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                                                        <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
+                                                                    </div>
+                                                                    <div class="explore-place-bid-img">
+                                                                        <img src="assets/images/nft/img-22.jpg" alt="" class="card-img-top explore-img" />
+                                                                        <div class="bg-overlay"></div>
+                                                                        <div class="place-bid-btn">
+                                                                            <a href="https://drive.google.com/file/d/1Dg8b5Ez72oLbaDeZ_lsFExbViyfRLqD5/view" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Ver</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 2023 </p>
+                                                                        <h5 class="mb-1"><a href="apps-nft-item-details.html">Ciberseguridad</a></h5>
+                                                                        <p class="text-muted mb-0">ISMEM</p>
+                                                                    </div>
+                                                                    <div class="card-footer border-top border-top-dashed">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="flex-grow-1 fs-14">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4 product-item  mibanco">
+                                                                <div class="card explore-box card-animate">
+                                                                    <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                                                        <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
+                                                                    </div>
+                                                                    <div class="explore-place-bid-img">
+                                                                        <img src="assets/images/nft/img-25.jpg" alt="" class="card-img-top explore-img" />
+                                                                        <div class="bg-overlay"></div>
+                                                                        <div class="place-bid-btn">
+                                                                            <a href="https://drive.google.com/file/d/1lrckcCKqrTaZFsUnS8DBDgRMLBCgHm_e/view" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Ver</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 2023 </p>
+                                                                        <h5 class="mb-1"><a href="apps-nft-item-details.html">ABC de la digitalización</a></h5>
+                                                                        <p class="text-muted mb-0">MiBanco</p>
+                                                                    </div>
+                                                                    <div class="card-footer border-top border-top-dashed">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="flex-grow-1 fs-14">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- end container -->
+                                                </section>
+                                                <!-- end plan -->
+                                            </div>
+                                        </div>
+                                        <!--end row-->
+                                    </div>
+                                    <!--end tab-pane-->
+                                </div>
+                                <!--end tab-content-->
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+
+                </div><!-- container-fluid -->
+            </div><!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Velzon.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Jesús Adrián & Amancay Acuña
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div><!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Theme Settings -->
+    <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="theme-settings-offcanvas">
+        <div class="d-flex align-items-center bg-primary bg-gradient p-3 offcanvas-header">
+            <h5 class="m-0 me-2 text-white">Theme Customizer</h5>
+
+            <button type="button" class="btn-close btn-close-white ms-auto" id="customizerclose-btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div data-simplebar class="h-100">
+                <div class="p-4">
+                    <h6 class="mb-0 fw-semibold text-uppercase">Layout</h6>
+                    <p class="text-muted">Choose your layout</p>
+
+                    <div class="row gy-3">
+                        <div class="col-4">
+                            <div class="form-check card-radio">
+                                <input id="customizer-layout01" name="data-layout" type="radio" value="vertical" class="form-check-input">
+                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout01">
+                                    <span class="d-flex gap-1 h-100">
+                                        <span class="flex-shrink-0">
+                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                            </span>
+                                        </span>
+                                        <span class="flex-grow-1">
+                                            <span class="d-flex h-100 flex-column">
+                                                <span class="bg-light d-block p-1"></span>
+                                                <span class="bg-light d-block p-1 mt-auto"></span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <h5 class="fs-13 text-center mt-2">Vertical</h5>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check card-radio">
+                                <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal" class="form-check-input">
+                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout02">
+                                    <span class="d-flex h-100 flex-column gap-1">
+                                        <span class="bg-light d-flex p-1 gap-1 align-items-center">
+                                            <span class="d-block p-1 bg-soft-primary rounded me-1"></span>
+                                            <span class="d-block p-1 pb-0 px-2 bg-soft-primary ms-auto"></span>
+                                            <span class="d-block p-1 pb-0 px-2 bg-soft-primary"></span>
+                                        </span>
+                                        <span class="bg-light d-block p-1"></span>
+                                        <span class="bg-light d-block p-1 mt-auto"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <h5 class="fs-13 text-center mt-2">Horizontal</h5>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check card-radio">
+                                <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" class="form-check-input">
+                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout03">
+                                    <span class="d-flex gap-1 h-100">
+                                        <span class="flex-shrink-0">
+                                            <span class="bg-light d-flex h-100 flex-column gap-1">
+                                                <span class="d-block p-1 bg-soft-primary mb-2"></span>
+                                                <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                            </span>
+                                        </span>
+                                        <span class="flex-shrink-0">
+                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                            </span>
+                                        </span>
+                                        <span class="flex-grow-1">
+                                            <span class="d-flex h-100 flex-column">
+                                                <span class="bg-light d-block p-1"></span>
+                                                <span class="bg-light d-block p-1 mt-auto"></span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <h5 class="fs-13 text-center mt-2">Two Column</h5>
+                        </div>
+                        <!-- end col -->
+
+                        <div class="col-4">
+                            <div class="form-check card-radio">
+                                <input id="customizer-layout04" name="data-layout" type="radio" value="semibox" class="form-check-input">
+                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout04">
+                                    <span class="d-flex gap-1 h-100">
+                                        <span class="flex-shrink-0 p-1">
+                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                            </span>
+                                        </span>
+                                        <span class="flex-grow-1">
+                                            <span class="d-flex h-100 flex-column pt-1 pe-2">
+                                                <span class="bg-light d-block p-1"></span>
+                                                <span class="bg-light d-block p-1 mt-auto"></span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <h5 class="fs-13 text-center mt-2">Semi Box</h5>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Color Scheme</h6>
+                    <p class="text-muted">Choose Light or Dark Scheme.</p>
+
+                    <div class="colorscheme-cardradio">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-check card-radio">
+                                    <input class="form-check-input" type="radio" name="data-layout-mode" id="layout-mode-light" value="light">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="layout-mode-light">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Light</h5>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-check card-radio dark">
+                                    <input class="form-check-input" type="radio" name="data-layout-mode" id="layout-mode-dark" value="dark">
+                                    <label class="form-check-label p-0 avatar-md w-100 bg-dark" for="layout-mode-dark">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-soft-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-light rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-soft-light d-block p-1"></span>
+                                                    <span class="bg-soft-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Dark</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sidebar-visibility">
+                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Visibility</h6>
+                        <p class="text-muted">Choose show or Hidden sidebar.</p>
+                
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-check card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility" id="sidebar-visibility-show" value="show">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-visibility-show">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0 p-1">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column pt-1 pe-2">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Show</h5>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility" id="sidebar-visibility-hidden" value="hidden">
+                                    <label class="form-check-label p-0 avatar-md w-100 px-2" for="sidebar-visibility-hidden">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column pt-1 px-2">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Hidden</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layout-width">
+                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Layout Width</h6>
+                        <p class="text-muted">Choose Fluid or Boxed layout.</p>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-check card-radio">
+                                    <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-fluid" value="fluid">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="layout-width-fluid">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Fluid</h5>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check card-radio">
+                                    <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-boxed" value="boxed">
+                                    <label class="form-check-label p-0 avatar-md w-100 px-2" for="layout-width-boxed">
+                                        <span class="d-flex gap-1 h-100 border-start border-end">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Boxed</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layout-position">
+                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Layout Position</h6>
+                        <p class="text-muted">Choose Fixed or Scrollable Layout Position.</p>
+
+                        <div class="btn-group radio" role="group">
+                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
+                            <label class="btn btn-light w-sm" for="layout-position-fixed">Fixed</label>
+
+                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
+                            <label class="btn btn-light w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
+                        </div>
+                    </div>
+                    <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Topbar Color</h6>
+                    <p class="text-muted">Choose Light or Dark Topbar Color.</p>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-light" value="light">
+                                <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-light">
+                                    <span class="d-flex gap-1 h-100">
+                                        <span class="flex-shrink-0">
+                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                            </span>
+                                        </span>
+                                        <span class="flex-grow-1">
+                                            <span class="d-flex h-100 flex-column">
+                                                <span class="bg-light d-block p-1"></span>
+                                                <span class="bg-light d-block p-1 mt-auto"></span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <h5 class="fs-13 text-center mt-2">Light</h5>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-dark" value="dark">
+                                <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-dark">
+                                    <span class="d-flex gap-1 h-100">
+                                        <span class="flex-shrink-0">
+                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                            </span>
+                                        </span>
+                                        <span class="flex-grow-1">
+                                            <span class="d-flex h-100 flex-column">
+                                                <span class="bg-primary d-block p-1"></span>
+                                                <span class="bg-light d-block p-1 mt-auto"></span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <h5 class="fs-13 text-center mt-2">Dark</h5>
+                        </div>
+                    </div>
+
+                    <div id="sidebar-size">
+                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Size</h6>
+                        <p class="text-muted">Choose a size of Sidebar.</p>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-default" value="lg">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-default">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Default</h5>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-compact" value="md">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-compact">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Compact</h5>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-small" value="sm">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-small">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1">
+                                                    <span class="d-block p-1 bg-soft-primary mb-2"></span>
+                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Small (Icon View)</h5>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-small-hover" value="sm-hover">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-small-hover">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1">
+                                                    <span class="d-block p-1 bg-soft-primary mb-2"></span>
+                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Small Hover View</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sidebar-view">
+                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar View</h6>
+                        <p class="text-muted">Choose Default or Detached Sidebar view.</p>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-layout-style" id="sidebar-view-default" value="default">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-view-default">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Default</h5>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-layout-style" id="sidebar-view-detached" value="detached">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-view-detached">
+                                        <span class="d-flex h-100 flex-column">
+                                            <span class="bg-light d-flex p-1 gap-1 align-items-center px-2">
+                                                <span class="d-block p-1 bg-soft-primary rounded me-1"></span>
+                                                <span class="d-block p-1 pb-0 px-2 bg-soft-primary ms-auto"></span>
+                                                <span class="d-block p-1 pb-0 px-2 bg-soft-primary"></span>
+                                            </span>
+                                            <span class="d-flex gap-1 h-100 p-1 px-2">
+                                                <span class="flex-shrink-0">
+                                                    <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                        <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                        <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                        <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            <span class="bg-light d-block p-1 mt-auto px-2"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Detached</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sidebar-color">
+                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Color</h6>
+                        <p class="text-muted">Choose a color of Sidebar.</p>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient.show">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-light" value="light">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-color-light">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-white border-end d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Light</h5>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient.show">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-dark" value="dark">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-color-dark">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-primary d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-light rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Dark</h5>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-link avatar-md w-100 p-0 overflow-hidden border collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient" aria-expanded="false" aria-controls="collapseBgGradient">
+                                    <span class="d-flex gap-1 h-100">
+                                        <span class="flex-shrink-0">
+                                            <span class="bg-vertical-gradient d-flex h-100 flex-column gap-1 p-1">
+                                                <span class="d-block p-1 px-2 bg-soft-light rounded mb-2"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
+                                                <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
+                                            </span>
+                                        </span>
+                                        <span class="flex-grow-1">
+                                            <span class="d-flex h-100 flex-column">
+                                                <span class="bg-light d-block p-1"></span>
+                                                <span class="bg-light d-block p-1 mt-auto"></span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </button>
+                                <h5 class="fs-13 text-center mt-2">Gradient</h5>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                        <div class="collapse" id="collapseBgGradient">
+                            <div class="d-flex gap-2 flex-wrap img-switch p-2 px-3 bg-light rounded">
+
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient" value="gradient">
+                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient">
+                                        <span class="avatar-title rounded-circle bg-vertical-gradient"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-2" value="gradient-2">
+                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-2">
+                                        <span class="avatar-title rounded-circle bg-vertical-gradient-2"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-3" value="gradient-3">
+                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-3">
+                                        <span class="avatar-title rounded-circle bg-vertical-gradient-3"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-4" value="gradient-4">
+                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-4">
+                                        <span class="avatar-title rounded-circle bg-vertical-gradient-4"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sidebar-img">
+                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Images</h6>
+                        <p class="text-muted">Choose a image of Sidebar.</p>
+
+                        <div class="d-flex gap-2 flex-wrap img-switch">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-none" value="none">
+                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-none">
+                                    <span class="avatar-md w-auto bg-light d-flex align-items-center justify-content-center">
+                                        <i class="ri-close-fill fs-20"></i>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-01" value="img-1">
+                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-01">
+                                    <img src="assets/images/sidebar/img-1.jpg" alt="" class="avatar-md w-auto object-cover">
+                                </label>
+                            </div>	
+
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-02" value="img-2">
+                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-02">
+                                    <img src="assets/images/sidebar/img-2.jpg" alt="" class="avatar-md w-auto object-cover">
+                                </label>
+                            </div>
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-03" value="img-3">
+                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-03">
+                                    <img src="assets/images/sidebar/img-3.jpg" alt="" class="avatar-md w-auto object-cover">
+                                </label>
+                            </div>
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-04" value="img-4">
+                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-04">
+                                    <img src="assets/images/sidebar/img-4.jpg" alt="" class="avatar-md w-auto object-cover">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="preloader-menu">
+                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Preloader</h6>
+                        <p class="text-muted">Choose a preloader.</p>
+                    
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-preloader" id="preloader-view-custom" value="enable">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="preloader-view-custom">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <!-- <div id="preloader"> -->
+                                        <div id="status" class="d-flex align-items-center justify-content-center">
+                                            <div class="spinner-border text-primary avatar-xxs m-auto" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        </div>
+                                        <!-- </div> -->
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Enable</h5>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check sidebar-setting card-radio">
+                                    <input class="form-check-input" type="radio" name="data-preloader" id="preloader-view-none" value="disable">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="preloader-view-none">
+                                        <span class="d-flex gap-1 h-100">
+                                            <span class="flex-shrink-0">
+                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
+                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1">
+                                                <span class="d-flex h-100 flex-column">
+                                                    <span class="bg-light d-block p-1"></span>
+                                                    <span class="bg-light d-block p-1 mt-auto"></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <h5 class="fs-13 text-center mt-2">Disable</h5>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!-- end preloader-menu -->
+
+                </div>
+            </div>
+
+        </div>
+        <div class="offcanvas-footer border-top p-3 text-center">
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
+                </div>
+                <div class="col-6">
+                    <a href="https://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary w-100">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <script src="assets/js/pages/nft-landing.init.js"></script>
+    
+</body>
+
+</html>
